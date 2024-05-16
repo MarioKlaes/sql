@@ -4,6 +4,7 @@
 SELECT customer_id, customer_first_name, customer_last_name, customer_zip
 from customer;
 
+
 /* 2. Write a query that displays all of the columns and 10 rows from the cus- tomer table, 
 sorted by customer_last_name, then customer_first_ name. */
 
@@ -49,7 +50,6 @@ select product_id, vendor_id, market_date, customer_id, quantity, cost_to_custom
        (quantity * cost_to_customer_per_qty) as price
 FROM customer_purchases
 where vendor_id >= 8 and vendor_id <= 10;
-
 --CASE
 /* 1. Products can be sold by the individual unit or by bulk measures like lbs. or oz. 
 Using the product table, write a query that outputs the product_id and product_name
@@ -97,3 +97,4 @@ from vendor v
 INNER JOIN vendor_booth_assignments vba
       ON  v.vendor_id = vba.vendor_id
 order by v.vendor_name asc, vba.market_date DESC;
+
