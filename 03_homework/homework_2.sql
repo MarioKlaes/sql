@@ -4,6 +4,7 @@
 SELECT customer_id, customer_first_name, customer_last_name, customer_zip
 from customer;
 
+
 /* 2. Write a query that displays all of the columns and 10 rows from the cus- tomer table, 
 sorted by customer_last_name, then customer_first_ name. */
 
@@ -97,3 +98,4 @@ from vendor v
 INNER JOIN vendor_booth_assignments vba
       ON  v.vendor_id = vba.vendor_id
 order by v.vendor_name asc, vba.market_date DESC;
+

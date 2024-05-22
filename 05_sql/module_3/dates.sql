@@ -1,22 +1,25 @@
--- DATES
+--dates
 
 SELECT DISTINCT
 --now
-DATETIME('now')
-,DATE('now')
-,TIME('now')
+DATE('now')
+,TIME()
+,DATETIME()
 
---STRFTIME
-,strftime('%Y %m', '1970-01-01')
-,strftime('%Y-%m-%d', '2024-02-27','+50 days') as the_future
+--strftime
+,strftime('%Y-%m','now')
+,strftime('%Y-%m-%d', '2024-05-20', '+50 days') as the_future
 ,market_date
-,strftime('%Y-%m-%d', market_date,'-50 days','-1 year') as the_future
+,strftime('%Y/%m/%d',market_date,'+50 days','-1 year')
 
--- DATEADD
-,strftime('%Y-%m-%d', '2024-01-27','start of month','-1 day') as last_day_of_last_month
+--dateadd
+-- last day of last month
+,strftime('%Y-%m-%d', market_date, 'start of month', '-1 day')
 
---DATEDIFF equiv
-,STRFTIME('%m','2024-12-21') - STRFTIME('%m','now') -- months until december -- caution, can mislead
-,CAST(((JULIANDAY('now') - JULIANDAY(market_date)) / 365.25) AS INT) -- number of years between now and marketdate
-,((JULIANDAY('now') - JULIANDAY(market_date)) * 24) -- number of hours between now and marketdate
+--datediff equiv
+,market_date
+,CAST(((julianday('now') - julianday(market_date)) / 365.25) as int) -- number of years between now and marketdate
+,julianday('now') - julianday(market_date) -- number of days between now and each marketdate
+,(julianday('now') - julianday(market_date))  * 24 -- number of HOURS between now and each marketdate
+
 FROM market_date_info
