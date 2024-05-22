@@ -32,7 +32,7 @@ $ echo "Data Sciences Institute"
 - Data Analyst in US healthcare until moving to Canada in 2018
 - Transitioned to Data Engineer at Plan Canada
 - Pursued Master of Information at UofT for R and Python focus
-- Currently working on Data Governance and Ethics at Thomson Reuters
+- Currently working on AI Governance and Ethics at Dataiku
 - **_Have a 2 year old Samoyed named Alto who takes up a lot ofmy free time 👉_**
 
 ![bg right:40% w:350](./images/01_dorky_alto.jpeg)
@@ -43,26 +43,36 @@ $ echo "Data Sciences Institute"
 
 - UofT Computer Science and Statistics graduate, with minor in Mathematics
 - Co-op at Citi (Software Development) and BMO (Business Analytics)
-- RBC Capital Markets BSA using SQL for Salesforce CRM data, transitioning to Supervisory and Regulatory role soon
+- Machine Learning Engineering Intern at Shopify working on a Fine Tuned LLM for Product Taxonomy, previously RBC Capital Markets
 - Former Women in Computer Science president at UofT
 - Involved with Toronto Wxmen in Data Science and RWomen at RBC
 
-![bg right:35% w:350](./images/01_DSC00461.png)
+![bg right:35% w:350](./images/01_ananya.png)
 
 ---
 
 
-# About Us (Vishnou)
+# About Us (Amanda)
 
-- Paris-Saclay University grad in Applied Math/Data Science
-- Explored SQL, Python, R in academia, then applied in industry
-- ML internships at Docugami, Ekimetrics, Stellantis, Randstad
-- Currently in UofT MscAC AI program
-- Working on Data Science/LLMs intersection projects
-- Considering PhD for professorship
-- Hobbies: guitar, saxophone, bass in music bands 🎸🎷
+- UofT Statistics undergraduate (entering 4th year)
+- Self-taught SQL through online resources
+- Currently in summer research program under UofT Statistics department
+- Considering MSc in Statistics
+- Hobbies: piano, puzzle, Netflix
 
-![bg right:35% w:350](./images/01_photo_5963.png)
+![bg right:35% w:350](./images/01_amanda.png)
+
+---
+
+# About Us (Sidra)
+
+- Bachelor’s in Biomedical Engineering from NED-UET
+- Postgraduate diploma in data analytics from  Toronto School Of Management.
+- Machine Learning Software Foundations Certificate from DSI-University Of Toronto.
+- 4+ years of experience in business intelligence and data analysis.
+- Engaged in  Continuously Learning and Upskilling my skills
+
+![bg right:35% w:350](./images/01_sidra.png)
 
 ---
 
@@ -123,7 +133,7 @@ $ echo "Data Sciences Institute"
 - Six homeworks total
 - At the end of each SQL module, I will provide you with 3-10 queries to write on your own
   - Covers the topics of the modules
-- Review answers in Tutorials with Ananya and Vishnou
+- Review answers in Office Hours with myself or course support
   - I may go over one or two queries at the start of class if desired
 - Designed to be relatively easy
   - Reaffirms what we wrote together
@@ -137,12 +147,12 @@ $ echo "Data Sciences Institute"
 
 - Pass/Fail. Do the work, pass the course :) 
 
-- One Assignment: Data Model Design, 40%, due TBD
+- One Assignment: Data Model Design, 40%, due June 1
 
-- Homework: 48% (8% each), due on Thursdays and Saturdays
+- Homework: 48% (8% each), due on Thursdays, Fridays, Saturdays
 
 - Class Attendance: 12% (2% each)
-  - Let Ananya or myself know if you are unable to attend a lesson
+  - Let myself or course support know if you are unable to attend a lesson
   - Code along!! Best way to learn.
 
 ---
@@ -173,11 +183,11 @@ For live coding:
 
 # **Good to go?**
 
-**If not, please message Ananya or Vishnou**
+**If not, please message your course support**
 
 ---
 
-# Inrtoduction:
+# Introduction:
 
 ## Welcome
 
@@ -197,7 +207,7 @@ For live coding:
 - SQL: Structured Query Language
   - Pronounced as either S.Q.L. (ess-cue-ell) or “sequel”
 - SQL is a _query_ language rather than a programming language
-  - Querying is closer to telling a computer *what you want*, rather than *what is has to do*
+  - Querying is closer to telling a computer *what you want*, rather than *what it has to do*
   - SQL code is often less reproducible than other programming languages because it's domain specific
       - Some SQL code, especially more advanced procedural code, is reproducible within the same flavour
   - SQL's domain is databases and is based on set theory
@@ -636,41 +646,44 @@ Table 1: Country — Table 2: States
 
 **Many-to-Many**: where multiple rows within a table can be referenced by multiple rows in another table
 
-Table 1: Employee — Table 2: Employee Type ( Next slide )
+For this example, consider different ways to define "European" membership, such as whether or not a country: 1) is a member of the EU, 2) uses the Euro, or 3) has abolished  border controls (Schengen Agreement)
 
-For this example, imagine the following:
-
-Previously, A was an course instructor at DSI (python) _and_ a TA at DSI (SQL). Thomas remains the instructor for SQL. Ananya is now the course support. If a table contained Employee ID and Employee Type ID, A would be listed twice.
 
 ---
-# Relationship Examples
 
-Table 1: Employee — Table 2: Employee Type
+Table 1: Country — Table 2: Membership
 
-| Employee | Employee ID |
-|----------|-------------|
-| Thomas   | 001         |
-| A        | 002         |
-| Ananya   | 003         |
+| Country       | Country ID |
+|---------------|------------|
+| Slovenia      | 001        |
+| Sweden        | 002        |
+| Switzerland   | 003        |
+| ...(more countries) | ...  |
 
 
-| Type       | Type ID |
-|------------|---------|
-| Instructor | 10      |
-| TA         | 11      |
+| Membership | Member ID |
+|------------|-----------|
+| EU         | 10        |
+| Eurozone   | 11        |
+| Schengen   | 12        |
 
 ---
 
 # Relationship Examples
 
-Table 3: listed twice
+Table: Different countries align differently within these definition
 
-| Employee ID |     | Type ID |
-|-------------|-----|---------|
-| 001         | ∞:∞ | 10      |
-| 002         | ∞:∞ | 10      |
-| 002         | ∞:∞ | 11      |
-| 003         | ∞:∞ | 11      |
+| Country ID |     | Member ID |
+|------------|-----|-----------|
+| 001        | ∞:∞ | 10        |
+| 001        | ∞:∞ | 11        |
+| 001        | ∞:∞ | 12        |
+| 002        | ∞:∞ | 10        |
+| 002        | ∞:∞ | 12        |
+| 003        | ∞:∞ | 12        |
+
+We can create additional Many-to-Many relationships if we created a table including NATO/UN membership, because many non-European countries are NATO/UN members.
+
 
 ---
 

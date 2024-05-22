@@ -2,9 +2,11 @@
 /* 1. Write a query that determines how many times each vendor has rented a booth 
 at the farmer’s market by counting the vendor booth assignments per vendor_id. */
 
+
 select vendor_id, count(booth_number) as times_vendor_rented_a_booth
 from vendor_booth_assignments
 group by vendor_id;
+
 
 /* 2. The Farmer’s Market Customer Appreciation Committee wants to give a bumper 
 sticker to everyone who has ever spent more than $2000 at the market. Write a query that generates a list 
@@ -23,6 +25,7 @@ having total_spent_per_customer_ever > 2000 -- ever spent more than $2000
 order by c.customer_last_name desc, c.customer_first_name desc; --sorted by last name, then first name
 
 
+
 --Temp Table
 /* 1. Insert the original vendor table into a temp.new_vendor and then add a 10th vendor: 
 Thomass Superfood Store, a Fresh Focused store, owned by Thomas Rosenthal
@@ -34,6 +37,7 @@ When inserting the new vendor, you need to appropriately align the columns to be
 -> To insert the new row use VALUES, specifying the value you want for each column:
 VALUES(col1,col2,col3,col4,col5) 
 */
+
 
 -- create temp.new_vendor
 drop table if exists new_vendor;
@@ -47,6 +51,7 @@ insert into new_vendor
     (10, 'Thomass Superfood', 'Fresh Focused', 'Thomas' , ' Rosenthal');
 	
 select * from new_vendor;
+
 
 -- Date
 /*1. Get the customer_id, month, and year (in separate columns) of every purchase in the customer_purchases table.
@@ -99,3 +104,4 @@ group by cp.customer_id,
        strftime('%m', cp.market_date) , 
 	   strftime('%Y', cp.market_date)
 having month = '04' and year = '2019';
+
