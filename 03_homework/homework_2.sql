@@ -50,6 +50,7 @@ select product_id, vendor_id, market_date, customer_id, quantity, cost_to_custom
        (quantity * cost_to_customer_per_qty) as price
 FROM customer_purchases
 where vendor_id >= 8 and vendor_id <= 10;
+
 --CASE
 /* 1. Products can be sold by the individual unit or by bulk measures like lbs. or oz. 
 Using the product table, write a query that outputs the product_id and product_name
