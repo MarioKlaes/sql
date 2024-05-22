@@ -17,6 +17,17 @@ The `||` values concatenate the columns into strings.
 Edit the appropriate columns -- you're making two edits -- and the NULL rows will be fixed. 
 All the other rows will remain the same.) */
 
+SELECT product_name  || ', ' ||
+	   COALESCE (product_size, '') || ' (' ||
+	   ifnull (product_qty_type, 'unit') || ')'
+FROM product;
+
+-- or --
+
+SELECT product_name  || ', ' ||
+	   COALESCE (product_size, '') || ' (' ||
+	   COALESCE (product_qty_type, 'unit') || ')'
+FROM product;
 
 
 
@@ -30,11 +41,67 @@ each new market date for each customer, or select only the unique market dates p
 (without purchase details) and number those visits. 
 HINT: One of these approaches uses ROW_NUMBER() and one uses DENSE_RANK(). */
 
+-- using Row_mnumber()
+select customer_id, market_date , row_number() over (partition by customer_id order by market_date asc) as visit_number
+from customer_purchases
+
+-- alternative 1
+--  using DENSE_RANK()
+select customer_id, market_date , DENSE_RANK() over (partition by customer_id order by market_date asc) as visit_number
+from customer_purchases;
+
+-- alternative 2
+-- using DISTINCT to eliminate the repetitions (ties) of the DENSE_RANK() making a clean list where each visit per day is showed once
+select DISTINCT customer_id, market_date,  x.visit_number
+from (
+select customer_id, market_date , DENSE_RANK() over (partition by customer_id order by market_date asc) as visit_number
+from customer_purchases
+) x;
 
 /* 2. Reverse the numbering of the query from a part so each customer’s most recent visit is labeled 1, 
 then write another query that uses this one as a subquery (or temp table) and filters the results to 
 only the customer’s most recent visit. */
 
+-- using sub query
+select *
+from (
+select customer_id, market_date , DENSE_RANK() over (partition by customer_id order by market_date desc) as visit_number
+from customer_purchases
+) x
+where x.visit_number = 1;
+
+-- using tempporary table
+drop table if exists temp.most_recent_visit;
+create temp table if not exists temp.most_recent_visit
+(
+customer_id INT,
+market_date date,
+visit_number INT
+);
+
+insert 
+into temp.most_recent_visit (customer_id, market_date, visit_number)
+select customer_id, market_date , DENSE_RANK() over (partition by customer_id order by market_date desc) as visit_number
+from customer_purchases;
+
+select *
+from temp.most_recent_visit 
+where visit_number = 1;
 
 /* 3. Using a COUNT() window function, include a value along with each row of the 
 customer_purchases table that indicates how many different times that customer has purchased that product_id. */
+
+-- how many different times one customer_id has purchased a product_id
+select customer_id, 
+	product_id, 
+	count(*) as purchases_per_costumer
+from customer_purchases 
+group by customer_id, product_id
+
+-- some customers purchase the same product more than 1 time per market_date
+select customer_id, 
+	product_id, 
+	market_date,
+	count(*) as purchases_per_costumer_per_date
+from customer_purchases 
+group by customer_id, product_id,market_date
