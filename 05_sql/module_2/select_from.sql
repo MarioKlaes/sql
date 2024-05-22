@@ -1,16 +1,13 @@
--- SELECT & FROM
+--SELECT & FROM
 
---SELECT * FROM customer;
+--SELECT * FROM product
 
-/*
-SELECT customer_first_name AS cust_first_name,
-customer_last_name AS cust_last_name,
-customer_id AS cust_id
+--SELECT 5*10, 1+1, 2024 AS this_year
+
+SELECT customer_first_name, customer_last_name, 5*10
 FROM customer
-*/
 
-SELECT 5*10 AS mult, 
-'january' AS last_month
 
+--SELECT customer_first_name customer_last_name from customer
 
 

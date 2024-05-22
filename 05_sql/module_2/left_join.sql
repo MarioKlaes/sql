@@ -1,20 +1,22 @@
--- LEFT JOIN
-SELECT *
+--LEFT JOIN
 
+SELECT * 
 FROM product_category AS pc
 LEFT JOIN product AS p
-	ON pc.product_category_id = p.product_category_id
-	ORDER by pc.product_category_id
+	ON pc.product_category_id = p.product_category_id;
 
-
-/*
-SELECT DISTINCT pc.product_category_id, p.product_category_id
-
-FROM product_category AS pc
-LEFT JOIN product AS p
-	ON pc.product_category_id = p.product_category_id
+	-- direction matters, 23 rows instead of 24 rows 
+SELECT * 
+FROM product AS pc
+LEFT JOIN product_category AS p
+	ON pc.product_category_id = p.product_category_id 
 	
-WHERE pc.product_category_id BETWEEN 1 and 6 -- different if you do p.product_category_id, because #4 not in p.product_category_id
+	
+/* RIGHT JOIN CONCEPT 
 
-ORDER by pc.product_category_id
-*/
+SELECT * 
+FROM product as p
+RIGHT JOIN product_category as pc
+	on pc.product_category_id = p.product_category_id
+	
+*/	
