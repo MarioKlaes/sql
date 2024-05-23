@@ -1,0 +1,163 @@
+[
+    {
+        "product_category_id": 1,
+        "product_id": 1,
+        "product_name": "Habanero Peppers - Organic",
+        "product_qty_type": "lbs",
+        "product_size": "medium"
+    },
+    {
+        "product_category_id": 1,
+        "product_id": 2,
+        "product_name": "Jalapeno Peppers - Organic",
+        "product_qty_type": "lbs",
+        "product_size": "small"
+    },
+    {
+        "product_category_id": 1,
+        "product_id": 3,
+        "product_name": "Poblano Peppers - Organic",
+        "product_qty_type": "unit",
+        "product_size": "large"
+    },
+    {
+        "product_category_id": 3,
+        "product_id": 4,
+        "product_name": "Banana Peppers - Jar",
+        "product_qty_type": "unit",
+        "product_size": "8 oz"
+    },
+    {
+        "product_category_id": 3,
+        "product_id": 5,
+        "product_name": "Whole Wheat Bread",
+        "product_qty_type": "unit",
+        "product_size": "1.5 lbs"
+    },
+    {
+        "product_category_id": 5,
+        "product_id": 6,
+        "product_name": "Cut Zinnias Bouquet",
+        "product_qty_type": "unit",
+        "product_size": "medium"
+    },
+    {
+        "product_category_id": 3,
+        "product_id": 7,
+        "product_name": "Apple Pie",
+        "product_qty_type": "unit",
+        "product_size": "10\""
+    },
+    {
+        "product_category_id": 1,
+        "product_id": 9,
+        "product_name": "Sweet Potatoes",
+        "product_qty_type": "lbs",
+        "product_size": "medium"
+    },
+    {
+        "product_category_id": 6,
+        "product_id": 10,
+        "product_name": "Eggs",
+        "product_qty_type": "unit",
+        "product_size": "1 dozen"
+    },
+    {
+        "product_category_id": 6,
+        "product_id": 11,
+        "product_name": "Pork Chops",
+        "product_qty_type": "lbs",
+        "product_size": "1 lb"
+    },
+    {
+        "product_category_id": 1,
+        "product_id": 12,
+        "product_name": "Baby Salad Lettuce Mix - Bag",
+        "product_qty_type": "unit",
+        "product_size": "1/2 lb"
+    },
+    {
+        "product_category_id": 1,
+        "product_id": 13,
+        "product_name": "Baby Salad Lettuce Mix",
+        "product_qty_type": "lbs",
+        "product_size": "1 lb"
+    },
+    {
+        "product_category_id": 1,
+        "product_id": 14,
+        "product_name": "Red Potatoes",
+        "product_qty_type": null,
+        "product_size": null
+    },
+    {
+        "product_category_id": 1,
+        "product_id": 15,
+        "product_name": "Red Potatoes - Small",
+        "product_qty_type": null,
+        "product_size": ""
+    },
+    {
+        "product_category_id": 1,
+        "product_id": 16,
+        "product_name": "Sweet Corn",
+        "product_qty_type": "unit",
+        "product_size": "Ear"
+    },
+    {
+        "product_category_id": 1,
+        "product_id": 17,
+        "product_name": "Carrots",
+        "product_qty_type": "lbs",
+        "product_size": "sold by weight"
+    },
+    {
+        "product_category_id": 1,
+        "product_id": 18,
+        "product_name": "Carrots - Organic",
+        "product_qty_type": "unit",
+        "product_size": "bunch"
+    },
+    {
+        "product_category_id": 7,
+        "product_id": 19,
+        "product_name": "Farmer's Market Resuable Shopping Bag",
+        "product_qty_type": "unit",
+        "product_size": "medium"
+    },
+    {
+        "product_category_id": 7,
+        "product_id": 20,
+        "product_name": "Homemade Beeswax Candles",
+        "product_qty_type": "unit",
+        "product_size": "6\""
+    },
+    {
+        "product_category_id": 1,
+        "product_id": 21,
+        "product_name": "Organic Cherry Tomatoes",
+        "product_qty_type": "unit",
+        "product_size": "pint"
+    },
+    {
+        "product_category_id": 1,
+        "product_id": 22,
+        "product_name": "Roma Tomatoes",
+        "product_qty_type": "lbs",
+        "product_size": "medium"
+    },
+    {
+        "product_category_id": 2,
+        "product_id": 23,
+        "product_name": "Maple Syrup - Jar",
+        "product_qty_type": "unit",
+        "product_size": "8 oz"
+    },
+    {
+        "product_category_id": 3,
+        "product_id": 8,
+        "product_name": "Cherry Pie",
+        "product_qty_type": "unit",
+        "product_size": "10\""
+    }
+]
